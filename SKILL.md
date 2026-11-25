@@ -183,7 +183,7 @@ Keep the set visually related without making every image look identical. Vary ca
 **Treat the complete set as one vertical ecommerce page, delivered as adjacent image slicesâ€”not as a collection of independent slides, posters, or cards.** A "screen" or "slice" is only a production/file boundary. It is not a buyer-visible page boundary.
 
 - Plan one continuous top-to-bottom reading experience and buyer journey across the entire set.
-- Every slice must connect naturally to its neighbors. Define an incoming edge condition and an outgoing edge handoff for each slice; adjacent edges should share compatible background, color, lighting, texture, spatial depth, and visual direction.
+- Every slice must connect naturally to its neighbors. Define a `top_edge_anchor` and `bottom_edge_anchor` for each slice; the previous slice's `bottom_edge_anchor` must inform the next slice's `top_edge_anchor`. Adjacent edges should share compatible background, color, lighting, texture, spatial depth, and visual direction.
 - Extend the scene/background naturally to all four image edges. The bottom of one slice and the top of the next must feel like adjoining parts of the same page, not the end and beginning of separate slides.
 - When a product, object, line, shadow, light beam, surface, or other visual element crosses a seam, align its position, scale, direction, and appearance across both slices. Do not create a crossing element unless it can be aligned reliably.
 - Transitions between content areas may change scene, color, or density, but should be gradual and compositionally connected rather than abrupt slide resets. A shared visual world does not require one identical background on every slice.
@@ -220,7 +220,7 @@ Do not add a module merely to fill space. Do not show screen-order numbers (01â€
 ## Image generation
 
 - Generate the actual requested final images, not instructions for the user to generate them.
-- Give each screen its own content and composition. Do not ask the image model for eight unrelated copies of one generic prompt.
+- Give each slice a distinct content purpose and an appropriate composition while preserving the page-wide flow. Do not design it as an isolated slide or ask the image model for eight unrelated copies of one generic prompt.
 - Use individual product images as product-appearance references. Use a visual/style reference only when the user explicitly designates it as such. Never use a full PDF page as a style reference by default; follow the Source-material roles and visual independence rules.
 - Generate each requested image as a separate full-resolution file, but design neighboring files as adjoining slices of one long page. Generate in sequence where practical; carry forward the previous slice's outgoing edge handoff as the next slice's incoming edge condition. When image references are supported, use the adjacent slice as a continuity reference without copying its whole composition.
 - Before finalizing, inspect the adjacent top/bottom edges at their intended displayed width. Repair mismatched background, lighting, texture, perspective, object alignment, or abrupt transitions. Do not add borders, blur, mirrored padding, or other devices to hide a failed join.
