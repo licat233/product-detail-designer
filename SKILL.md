@@ -2,7 +2,7 @@
 name: product-detail-designer
 description: Create commercial-quality ecommerce product detail page images from product photos, product documents, and visual references. Use when a user asks to create, design, generate, or improve product listing images, ecommerce detail pages, product feature panels, or long-form product page visuals.
 license: MIT
-version: 1.0.1
+version: 1.0.2
 ---
 
 # Product Detail Designer
@@ -60,6 +60,45 @@ Internally distinguish:
 - **Unknown:** unsupported, conflicting, or not visible.
 
 Do not turn an inference into a confirmed technical or commercial claim. If sources conflict on a material fact, ask one concise question or omit the disputed claim.
+
+## Source-material roles and visual independence
+
+**Content reference is not visual reference.** A file supplied to explain the product does not automatically become a design template.
+
+Classify supplied materials by their intended role before creating the page:
+
+- **Product evidence:** brochures, catalogs, datasheets, specification sheets, manuals, certificates, existing product-page copy, and technical documents. Use these to verify product facts, specifications, features, functions, supported applications, limitations, and approved claims.
+- **Product visual assets:** product photographs, pack shots, close-ups, installation photographs, and genuine application photographs. Use these to understand and depict the real product. If a useful product photo is embedded in a PDF, extract or reference the individual image only when it can be used clearly and accurately.
+- **Technical drawings and diagrams:** use these to understand construction, dimensions, wiring, operation, and relationships between components. Create a new, legible explanation only when useful; preserve the engineering meaning and never invent missing geometry or values.
+- **Visual-design references:** moodboards, brand guidelines, sample ecommerce pages, or other files the user explicitly identifies as visual/style references. Follow only the aspects the user asks you to reference.
+
+### Default rule for PDFs and product documents
+
+Unless the user explicitly asks to reproduce, redesign, convert, or follow the visual design of a supplied document, treat every PDF page as a **content/evidence source only**, not as a visual template.
+
+Do not:
+
+- Recreate, trace, imitate, modernize, recolor, translate, or rearrange the PDF's page layout as the ecommerce detail page.
+- Copy its page-by-page sequence, composition, title placement, text blocks, tables, icon grids, decorative elements, backgrounds, or information hierarchy.
+- Feed a complete PDF page or a screenshot of that page to image generation as a design reference by default.
+- Turn each PDF page into a corresponding ecommerce screen, or produce a set that looks like the original brochure with new colors and fonts.
+
+You may extract and reorganize verified facts, approved wording, individual product images, and useful technical information from the document. Rewrite and structure that material for the buyer journey and the confirmed ecommerce platform. The final page must be an independently conceived ecommerce design, not a visual adaptation of the source document.
+
+If the only product visual is embedded in a PDF, use an individual extracted product image only if its resolution and quality are sufficient. Do not substitute an entire brochure page for a missing product photograph. If the real product cannot be seen clearly enough, ask for a proper product image or explain the limitation.
+
+### Required content-to-design separation check
+
+Before generation, be able to state internally:
+
+1. Which supplied sources establish product facts?
+2. Which individual assets establish the product's real appearance?
+3. Which files, if any, were explicitly designated as visual-design references?
+4. What new ecommerce narrative and visual system will be created for this product and placement?
+
+If no style reference was explicitly designated, create the visual system independently from the product category, buyer, market, brand requirements, and platform placement. Do not infer a request to copy a PDF's style merely because the PDF is polished or visually attractive.
+
+**Exception:** if the user explicitly requests a faithful PDF/brochure redesign or explicitly designates a document as the layout/style template, follow that instruction within the stated scope. Do not silently apply this exception to ordinary product-detail-page production.
 
 ## Production brief confirmation
 
@@ -172,7 +211,7 @@ Do not add a module merely to fill space. Do not show screen-order numbers (01â€
 
 - Generate the actual requested final images, not instructions for the user to generate them.
 - Give each screen its own content and composition. Do not ask the image model for eight unrelated copies of one generic prompt.
-- Use the supplied product and style references directly when the image tool supports references.
+- Use individual product images as product-appearance references. Use a visual/style reference only when the user explicitly designates it as such. Never use a full PDF page as a style reference by default; follow the Source-material roles and visual independence rules.
 - When several final images are needed, generate them as distinct screen-specific outputs. Use a multi-image batch only when the tool supports different instructions for each image.
 - Keep text concise enough to render legibly. Preserve exact critical copy and data; inspect every generated image for spelling, numbers, units, and unwanted pseudo-text.
 - Do not add fake UI, badges, seals, ratings, certifications, watermarks, or decorative labels.
@@ -187,7 +226,8 @@ Before delivery, inspect each image for:
 3. **Claims:** no unsupported technical or commercial statements.
 4. **Design:** clear hierarchy, professional ecommerce quality, useful imagery, and no filler.
 5. **Set consistency:** coherent visual language with meaningful composition variety.
-6. **Completeness:** the requested number, order, ratio, and deliverables are present.
+6. **Visual independence:** the final design is an independently conceived ecommerce page, not a restyled, traced, or page-by-page adaptation of a supplied brochure or specification PDF unless explicitly requested.
+7. **Completeness:** the requested number, order, ratio, and deliverables are present.
 
 Repair the smallest responsible part:
 

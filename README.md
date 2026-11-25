@@ -2,7 +2,7 @@
 
 **A lightweight, image-first AI skill for creating ecommerce product detail pages.**
 
-Latest release: [v1.0.1](https://github.com/licat233/product-detail-designer/releases/tag/v1.0.1)
+Latest release: [v1.0.2](https://github.com/licat233/product-detail-designer/releases/tag/v1.0.2)
 
 [简体中文](#简体中文) · [English](#english)
 
@@ -20,6 +20,7 @@ Product Detail Designer 是一个面向整个电商行业的通用 AI Skill。�
 - **零依赖：** 不要求安装 Python、Node.js、第三方包、脚本、API 或本地渲染环境。
 - **产品真实：** 优先保留真实产品的结构、颜色、材质、标识和关键部件。
 - **信息可信：** 不编造参数、认证、测试结果、销量、评价或其他商业声明。
+- **资料与设计分离：** PDF、宣传册和规格书默认只用于提取产品事实，不照搬或改编其页面 UI；最终详情页必须独立策划和设计。
 - **视觉统一：** 整套图片保持统一的设计语言，同时避免每屏重复同一种构图。
 - **少做无用中间件：** 不默认制作独立背景、1:3 母版、Moodboard、HTML 预览或 Contact Sheet。
 
@@ -27,11 +28,13 @@ Product Detail Designer 是一个面向整个电商行业的通用 AI Skill。�
 
 ChatGPT 普通 Chat 会话不会因为 GitHub 仓库公开就自动安装 Skill。使用时：
 
-1. 将 [SKILL.md](SKILL.md) 作为附件提供给 ChatGPT，或发送 [v1.0.1 固定版本原始文件](https://raw.githubusercontent.com/licat233/product-detail-designer/v1.0.1/SKILL.md)。
+1. 将 [SKILL.md](SKILL.md) 作为附件提供给 ChatGPT，或发送 [v1.0.2 固定版本原始文件](https://raw.githubusercontent.com/licat233/product-detail-designer/v1.0.2/SKILL.md)。
 2. 附上产品图片，以及已有的说明书、参数表或宣传册（如有）。
 3. 发送你的产品详情页制作提示词。
 4. ChatGPT 会先检查输出语言、图片尺寸 / 比例、电商平台 / 展示位置和销售地区；缺失的信息会在一条消息中集中确认。
 5. 确认或授权 AI 决定后，如果当前会话支持图像生成，Skill 会指导 ChatGPT 直接制作最终图片；无需安装本仓库的任何依赖。
+
+PDF、宣传册和规格书用于理解产品与核实信息，不是默认的视觉模板。除非你明确要求复刻或改版原文件，AI 必须独立设计电商详情页，不能把 PDF 页面换色、换字体后当作最终作品。
 
 你可以继续使用自己已经习惯的详细制作提示词。Skill 负责图像生成与质量控制，不应擅自改写用户的制作要求或额外增加审批环节。
 
@@ -64,6 +67,7 @@ It is brand-neutral and category-neutral. It does not depend on a particular com
 - **No setup dependencies.** No Python, Node.js, packages, scripts, API keys, or local rendering pipeline are required.
 - **Protect product identity.** Preserve the real product's structure, color, material, branding, and distinctive components.
 - **Keep claims accurate.** Never invent specifications, certifications, test results, sales figures, reviews, or commercial promises.
+- **Separate evidence from design.** Product PDFs, brochures, and specification sheets are factual sources by default, not visual templates. Final ecommerce pages must be independently conceived rather than adapted from the source document's page UI.
 - **Keep the set coherent.** Maintain a shared visual language while varying each screen's composition and information structure.
 - **Avoid unnecessary intermediates.** Separate backgrounds, 1:3 masters, moodboards, HTML reviews, and contact sheets are not default deliverables.
 
@@ -71,11 +75,13 @@ It is brand-neutral and category-neutral. It does not depend on a particular com
 
 A public GitHub repository is not automatically installed into an ordinary ChatGPT chat. To use this skill:
 
-1. Attach [SKILL.md](SKILL.md) to the conversation or provide the [v1.0.1 pinned raw file](https://raw.githubusercontent.com/licat233/product-detail-designer/v1.0.1/SKILL.md).
+1. Attach [SKILL.md](SKILL.md) to the conversation or provide the [v1.0.2 pinned raw file](https://raw.githubusercontent.com/licat233/product-detail-designer/v1.0.2/SKILL.md).
 2. Attach the product images and any available product documents.
 3. Send your own product-detail-page prompt.
 4. The assistant checks the output language, image dimensions/aspect ratio, ecommerce platform/placement, and sales region, asking for all missing details in one concise message.
 5. After confirmation or explicit delegation, if native image generation is available, the skill guides the assistant to create the final images directly. No repository dependencies need to be installed.
+
+Product PDFs, brochures, and specification sheets are used to understand the product and verify facts, not as default visual templates. Unless you explicitly request a faithful redesign, the assistant must independently design the ecommerce detail page instead of recoloring or rearranging the PDF's pages.
 
 Keep using your own established production prompt. The skill governs image-generation behavior and quality control; it should not rewrite the user's brief or add unrequested approval stages.
 

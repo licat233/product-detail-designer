@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.0.2 — 2026-11-25
+
+- Added explicit separation between product evidence and visual-design references.
+- Product PDFs, brochures, manuals, and specification sheets are factual sources by default, not visual templates.
+- Prohibited copying, tracing, recoloring, rearranging, or page-by-page adapting source-document UI and layouts for ordinary ecommerce detail-page production.
+- Required independently conceived ecommerce storytelling and visual design based on the product, buyer, market, and platform.
+- Clarified that individual product photos may be used as appearance references, while complete PDF pages must not be passed as design references by default.
+- Added a visual-independence check to the final quality audit.
+- Updated the bilingual README and ChatGPT quick start.
+
 ## 1.0.1 — 2026-11-25
 
 - Added a required Production Brief Confirmation checkpoint before final image generation.
