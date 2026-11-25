@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.0.3 — 2026-11-25
+
+- Added mandatory Continuous Long-Page Composition for multi-image ecommerce detail pages.
+- Clarified that screens are adjacent production slices of one vertical page, not independent posters or presentation slides.
+- Required natural top/bottom edge handoffs and continuity in background, lighting, spatial depth, texture, and visual direction.
+- Prohibited unrequested headers, footers, page numbers, 01–08 labels, repeated logo/title bars, corner ornaments, page borders, and slide-like frames.
+- Expanded the final audit to inspect image joins and reject slide chrome or standalone-slide styling.
+- Updated bilingual README and ChatGPT quick start.
+
 ## 1.0.2 — 2026-11-25
 
 - Added explicit separation between product evidence and visual-design references.
