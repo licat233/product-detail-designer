@@ -2,6 +2,7 @@
 name: product-detail-designer
 description: Create commercial-quality ecommerce product detail page images from product photos, product documents, and visual references. Use when a user asks to create, design, generate, or improve product listing images, ecommerce detail pages, product feature panels, or long-form product page visuals.
 license: MIT
+version: 1.0.1
 ---
 
 # Product Detail Designer
@@ -12,7 +13,7 @@ A brand-neutral, chat-first skill for creating ecommerce product detail page ima
 
 1. **The user's prompt is the production brief.** Follow its requested page count, language, ratio, style, approval gates, and deliverables. Do not rewrite the brief or add workflow stages.
 2. **Default to making the images.** When the user supplies product images and asks for finished detail-page images, analyze the inputs internally and proceed to image generation. Do not stop at advice, a long blueprint, or a design discussion unless the user asks for planning or their prompt explicitly requires approval.
-3. **Keep the interaction lightweight.** Ask a question only when a missing or conflicting fact would materially change the product depiction or make the result commercially misleading. Otherwise make a reasonable design decision and continue.
+3. **Confirm the production brief before final generation.** After reviewing the supplied product material, make sure the output language, image dimensions or aspect ratio, target ecommerce platform and placement, and sales market are known or explicitly delegated by the user. Ask once for all missing items before generating final images.
 4. **Use the host's native image-generation capability.** In ChatGPT, use the available image-generation tool. Do not simulate image generation with code or placeholder files.
 5. **No setup burden.** Do not require local installation, Python, Node.js, packages, API keys, external services, scripts, HTML editors, or a separate rendering pipeline.
 6. **No unrequested intermediate deliverables.** Do not create standalone backgrounds, moodboards, contact sheets, wireframes, HTML reviews, visual-master images, or 1:3 canvases unless the user or their prompt explicitly asks for them.
@@ -59,6 +60,42 @@ Internally distinguish:
 - **Unknown:** unsupported, conflicting, or not visible.
 
 Do not turn an inference into a confirmed technical or commercial claim. If sources conflict on a material fact, ask one concise question or omit the disputed claim.
+
+## Production brief confirmation
+
+This is a required production checkpoint, not a visual-design approval gate. Complete it after reviewing the supplied product material and before generating final images.
+
+### Four required items
+
+Confirm each item unless the user has already stated it clearly in the current conversation or explicitly delegated the decision:
+
+1. **Output language** — the language that should appear in the finished images. Do not infer it from the language used in chat, the language of a brochure, or the user's location.
+2. **Image dimensions or aspect ratio** — the intended size for each final image, expressed as width × height in pixels and/or an aspect ratio. Confirm orientation when it is not obvious.
+3. **Target ecommerce platform and placement** — for example, Amazon main/secondary product images, Amazon A+ Content, Shopify product-page media, Alibaba.com product detail page, eBay listing images, or a generic independent-store product page. A platform name alone may be insufficient when its placements have different formats.
+4. **Sales region / target market** — the intended country or region, such as the United States, EU/Europe, Japan, Southeast Asia, Middle East, or global. Do not infer the sales market from the user's current location.
+
+### How to ask
+
+- Inspect the available product photos and documents first, so any size recommendation can be informed by the product and intended use.
+- Check the conversation and supplied brief for answers already given. Never ask again for a confirmed item.
+- If two or more items are missing, ask for all missing items in **one concise message**. Do not split the questions across multiple turns.
+- Use ordinary conversational questions or a compact numbered list; do not create a long questionnaire.
+- For image size: if the platform and placement are known but the user does not know the size, recommend a suitable working size or aspect ratio and ask the user to confirm it. If the platform or placement is unknown, ask for it before recommending platform-specific dimensions.
+- Distinguish a verified platform requirement from a design recommendation. Do not invent current platform image limits. If claiming a current official requirement, verify it from the platform's official documentation when browsing is available; otherwise label the size as a recommendation, not an official rule.
+- The user may answer with exact values, accept your recommendation, or explicitly say that you may decide. Treat delegation as applying only to the item(s) they delegated.
+
+### Delegated decisions and defaults
+
+- Do not silently choose a missing required item just to avoid asking.
+- If the user explicitly says “you decide,” “use your recommendation,” or equivalent for a missing item, choose a sensible option and briefly state the assumption before production.
+- If language is delegated, choose based on the explicitly stated audience/market; if that still does not determine it, use the conversation language and state that assumption. An overseas-market request alone does not automatically mean English.
+- If platform/placement is delegated, use a neutral ecommerce product-page format unless the user has described a specific sales channel.
+- If sales market is delegated, use a broadly international presentation and avoid market-specific legal, regulatory, or certification claims that are not supported by the supplied material.
+- If dimensions are delegated, choose a practical size and aspect ratio appropriate to the confirmed placement. Do not present your choice as an official platform requirement unless verified.
+
+### Proceeding to production
+
+Begin final image generation only when all four items are either confirmed or explicitly delegated. Then proceed directly with the user's requested workflow. This checkpoint does not authorize extra blueprints, moodboards, visual masters, or approval gates that the user did not request.
 
 ## Product identity protection
 
