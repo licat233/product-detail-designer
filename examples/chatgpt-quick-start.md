@@ -1,15 +1,51 @@
 # ChatGPT Quick Start
 
-This is an optional short starter. It does not replace a user's existing, more detailed production prompt.
+This is an optional starter for an ordinary ChatGPT conversation. It does not replace a user's more detailed production prompt.
 
 ## 中文
 
-请使用本仓库的 **Product Detail Designer** Skill（先阅读 `SKILL.md`），结合我提供的产品图片和资料制作电商产品详情页。
+请使用 **Product Detail Designer v1.0.1** Skill 帮我制作电商产品详情页。
 
-请以我提供的制作提示词为准，直接完成其中要求的工作。默认直接生成最终详情页图片，不要额外安装依赖、制作独立背景、1:3 母版、HTML 预览或其他未要求的中间文件。严格保护产品真实外观和资料准确性。
+**Skill 文件（请先完整阅读）：**
+https://raw.githubusercontent.com/licat233/product-detail-designer/v1.0.1/SKILL.md
+
+我会提供产品图片，以及产品说明书、规格书或其他相关资料。
+
+请先分析我提供的产品图片和资料，然后检查以下四项制作信息：
+
+1. **输出语言**：最终详情页图片中的文案使用什么语言？
+2. **图片尺寸 / 比例**：每屏需要什么像素尺寸或宽高比例？
+3. **电商平台 / 展示位置**：例如 Amazon 商品图片、Amazon A+ Content、Shopify 产品页、Alibaba.com 详情页，或其他平台。
+4. **销售地区 / 目标市场**：例如美国、欧洲、日本、东南亚、中东或全球市场。
+
+如果我已经提供某项信息，不要重复询问。缺少多项信息时，请在一条消息中一次性问完。若平台和展示位置已知但我不知道尺寸，请先推荐合适的尺寸或比例并让我确认。若我明确授权你决定某项信息，请自行选择并简要说明采用的设定。
+
+四项信息全部确认或由我明确授权你决定后，直接使用图像生成能力制作最终详情页图片。默认采用 8 屏，除非我另有说明。
+
+严格保护产品真实外观和资料准确性。不要编造参数或认证，不要安装依赖，不要编写代码，也不要制作未要求的独立背景、1:3 母版、HTML 预览或其他中间文件。生成后自行检查并修复产品、文字、参数和排版问题。
+
+如果当前会话无法读取 Skill 或不具备实际图像生成能力，请明确告诉我，不要假装已经完成。
 
 ## English
 
-Use the **Product Detail Designer** skill from this repository (read `SKILL.md`) to create ecommerce product detail images from the product photos and materials I provide.
+Use **Product Detail Designer v1.0.1** to create ecommerce product detail page images.
 
-Treat my production prompt as the task specification and complete the requested work. By default, generate the final detail-page images directly. Do not install dependencies or create separate backgrounds, 1:3 masters, HTML reviews, or other unrequested intermediate assets. Preserve the real product and keep all factual claims accurate.
+**Read the Skill first:**
+https://raw.githubusercontent.com/licat233/product-detail-designer/v1.0.1/SKILL.md
+
+I will provide product photos and any available product documents, specifications, or brochures.
+
+First review the supplied materials, then check these four production details:
+
+1. **Output language** — the language that should appear in the final images.
+2. **Image dimensions / aspect ratio** — the pixel dimensions or ratio for each screen.
+3. **Ecommerce platform / placement** — for example, Amazon product images, Amazon A+ Content, Shopify product-page media, Alibaba.com product detail page, or another placement.
+4. **Sales region / target market** — for example, the US, Europe, Japan, Southeast Asia, the Middle East, or global.
+
+Do not ask again for information I have already provided. If multiple items are missing, ask for all of them in one concise message. If the platform and placement are known but I do not know the image size, recommend a suitable size or ratio and ask me to confirm. If I explicitly delegate a decision, choose a sensible option and briefly state the assumption.
+
+Once all four items are confirmed or explicitly delegated, generate the final images directly using the available image-generation capability. Use 8 screens by default unless I specify otherwise.
+
+Preserve the real product and keep all factual claims accurate. Do not invent specifications or certifications, install dependencies, write code, or create unrequested standalone backgrounds, 1:3 masters, HTML previews, or other intermediate assets. Inspect and repair product, copy, specification, and layout errors before delivery.
+
+If the Skill cannot be read or native image generation is unavailable, say so plainly. Never pretend the work is complete.
