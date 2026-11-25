@@ -2,7 +2,7 @@
 
 **A lightweight, image-first AI skill for creating ecommerce product detail pages.**
 
-Latest release: [v1.0.2](https://github.com/licat233/product-detail-designer/releases/tag/v1.0.2)
+Latest release: [v1.0.3](https://github.com/licat233/product-detail-designer/releases/tag/v1.0.3)
 
 [简体中文](#简体中文) · [English](#english)
 
@@ -21,6 +21,8 @@ Product Detail Designer 是一个面向整个电商行业的通用 AI Skill。�
 - **产品真实：** 优先保留真实产品的结构、颜色、材质、标识和关键部件。
 - **信息可信：** 不编造参数、认证、测试结果、销量、评价或其他商业声明。
 - **资料与设计分离：** PDF、宣传册和规格书默认只用于提取产品事实，不照搬或改编其页面 UI；最终详情页必须独立策划和设计。
+- **连续长页面：** 多张图片是同一张纵向详情页的相邻切片，必须能够自然拼接，不做成独立海报或 PPT。
+- **无幻灯片装饰：** 不添加页眉、页脚、页码、屏幕序号、重复标题栏、装饰边角或整屏边框。
 - **视觉统一：** 整套图片保持统一的设计语言，同时避免每屏重复同一种构图。
 - **少做无用中间件：** 不默认制作独立背景、1:3 母版、Moodboard、HTML 预览或 Contact Sheet。
 
@@ -28,7 +30,7 @@ Product Detail Designer 是一个面向整个电商行业的通用 AI Skill。�
 
 ChatGPT 普通 Chat 会话不会因为 GitHub 仓库公开就自动安装 Skill。使用时：
 
-1. 将 [SKILL.md](SKILL.md) 作为附件提供给 ChatGPT，或发送 [v1.0.2 固定版本原始文件](https://raw.githubusercontent.com/licat233/product-detail-designer/v1.0.2/SKILL.md)。
+1. 将 [SKILL.md](SKILL.md) 作为附件提供给 ChatGPT，或发送 [v1.0.3 固定版本原始文件](https://raw.githubusercontent.com/licat233/product-detail-designer/v1.0.3/SKILL.md)。
 2. 附上产品图片，以及已有的说明书、参数表或宣传册（如有）。
 3. 发送你的产品详情页制作提示词。
 4. ChatGPT 会先检查输出语言、图片尺寸 / 比例、电商平台 / 展示位置和销售地区；缺失的信息会在一条消息中集中确认。
@@ -68,14 +70,16 @@ It is brand-neutral and category-neutral. It does not depend on a particular com
 - **Protect product identity.** Preserve the real product's structure, color, material, branding, and distinctive components.
 - **Keep claims accurate.** Never invent specifications, certifications, test results, sales figures, reviews, or commercial promises.
 - **Separate evidence from design.** Product PDFs, brochures, and specification sheets are factual sources by default, not visual templates. Final ecommerce pages must be independently conceived rather than adapted from the source document's page UI.
-- **Keep the set coherent.** Maintain a shared visual language while varying each screen's composition and information structure.
+- **Design one continuous page.** Multiple images are adjacent slices of one vertical ecommerce page and must join naturally, not look like independent posters or slides.
+- **No slide chrome.** No unrequested headers, footers, page numbers, screen numbers, repeated title bars, corner ornaments, or full-image frames.
+- **Keep the set coherent.** Maintain a shared visual language while varying each slice's composition and information structure.
 - **Avoid unnecessary intermediates.** Separate backgrounds, 1:3 masters, moodboards, HTML reviews, and contact sheets are not default deliverables.
 
 ### Use in an ordinary ChatGPT conversation
 
 A public GitHub repository is not automatically installed into an ordinary ChatGPT chat. To use this skill:
 
-1. Attach [SKILL.md](SKILL.md) to the conversation or provide the [v1.0.2 pinned raw file](https://raw.githubusercontent.com/licat233/product-detail-designer/v1.0.2/SKILL.md).
+1. Attach [SKILL.md](SKILL.md) to the conversation or provide the [v1.0.3 pinned raw file](https://raw.githubusercontent.com/licat233/product-detail-designer/v1.0.3/SKILL.md).
 2. Attach the product images and any available product documents.
 3. Send your own product-detail-page prompt.
 4. The assistant checks the output language, image dimensions/aspect ratio, ecommerce platform/placement, and sales region, asking for all missing details in one concise message.
