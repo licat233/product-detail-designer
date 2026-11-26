@@ -2,7 +2,7 @@
 
 **A lightweight, image-first AI skill for creating ecommerce product detail pages.**
 
-Latest release: [v1.0.3](https://github.com/licat233/product-detail-designer/releases/tag/v1.0.3)
+Latest release: [v1.0.4](https://github.com/licat233/product-detail-designer/releases/tag/v1.0.4)
 
 [简体中文](#简体中文) · [English](#english)
 
@@ -21,16 +21,18 @@ Product Detail Designer 是一个面向整个电商行业的通用 AI Skill。�
 - **产品真实：** 优先保留真实产品的结构、颜色、材质、标识和关键部件。
 - **信息可信：** 不编造参数、认证、测试结果、销量、评价或其他商业声明。
 - **资料与设计分离：** PDF、宣传册和规格书默认只用于提取产品事实，不照搬或改编其页面 UI；最终详情页必须独立策划和设计。
-- **连续长页面：** 多张图片是同一张纵向详情页的相邻切片，必须能够自然拼接，不做成独立海报或 PPT。
-- **无幻灯片装饰：** 不添加页眉、页脚、页码、屏幕序号、重复标题栏、装饰边角或整屏边框。
-- **视觉统一：** 整套图片保持统一的设计语言，同时避免每屏重复同一种构图。
+- **先设计整页，再切分图片：** 页面是设计单位，图片只是交付切片；不得逐张设计成独立海报或 PPT。
+- **页面标题只出现一次：** 主标题只在第一张出现；中间图片不得重新介绍产品或添加自己的标题栏。
+- **不做图片 Footer：** 任何切片都不添加网站页脚、重复 Logo、联系信息底栏或独立收尾；真正的 CTA 只在整张页面末尾出现一次（如有必要）。
+- **内容自然跨越切片：** 切分边界不等于内容模块边界，后续图片必须延续上一张，而不是重新开始。
+- **视觉统一：** 整张页面保持统一的视觉动线和空间关系，内容可以变化，但不重启页面结构。
 - **少做无用中间件：** 不默认制作独立背景、1:3 母版、Moodboard、HTML 预览或 Contact Sheet。
 
 ### 在 ChatGPT 普通会话中使用
 
 ChatGPT 普通 Chat 会话不会因为 GitHub 仓库公开就自动安装 Skill。使用时：
 
-1. 将 [SKILL.md](SKILL.md) 作为附件提供给 ChatGPT，或发送 [v1.0.3 固定版本原始文件](https://raw.githubusercontent.com/licat233/product-detail-designer/v1.0.3/SKILL.md)。
+1. 将 [SKILL.md](SKILL.md) 作为附件提供给 ChatGPT，或发送 [v1.0.4 固定版本原始文件](https://raw.githubusercontent.com/licat233/product-detail-designer/v1.0.4/SKILL.md)。
 2. 附上产品图片，以及已有的说明书、参数表或宣传册（如有）。
 3. 发送你的产品详情页制作提示词。
 4. ChatGPT 会先检查输出语言、图片尺寸 / 比例、电商平台 / 展示位置和销售地区；缺失的信息会在一条消息中集中确认。
@@ -70,16 +72,18 @@ It is brand-neutral and category-neutral. It does not depend on a particular com
 - **Protect product identity.** Preserve the real product's structure, color, material, branding, and distinctive components.
 - **Keep claims accurate.** Never invent specifications, certifications, test results, sales figures, reviews, or commercial promises.
 - **Separate evidence from design.** Product PDFs, brochures, and specification sheets are factual sources by default, not visual templates. Final ecommerce pages must be independently conceived rather than adapted from the source document's page UI.
-- **Design one continuous page.** Multiple images are adjacent slices of one vertical ecommerce page and must join naturally, not look like independent posters or slides.
-- **No slide chrome.** No unrequested headers, footers, page numbers, screen numbers, repeated title bars, corner ornaments, or full-image frames.
-- **Keep the set coherent.** Maintain a shared visual language while varying each slice's composition and information structure.
+- **Page first, slices second.** Design one complete vertical page before dividing it into image files; never design each image as a separate poster or slide.
+- **One page title only.** The primary title appears once, in the first slice. Later slices must not restart with another page title or product introduction.
+- **No per-image footer.** No website footer, repeated logo, contact bar, or separate sign-off on any slice. If needed, one CTA may appear only at the true end of the complete page.
+- **Content flows across file boundaries.** A file boundary is not a section ending; later slices continue the previous page flow instead of restarting it.
+- **Keep the page coherent.** Vary content and composition without restarting the page structure or visual flow.
 - **Avoid unnecessary intermediates.** Separate backgrounds, 1:3 masters, moodboards, HTML reviews, and contact sheets are not default deliverables.
 
 ### Use in an ordinary ChatGPT conversation
 
 A public GitHub repository is not automatically installed into an ordinary ChatGPT chat. To use this skill:
 
-1. Attach [SKILL.md](SKILL.md) to the conversation or provide the [v1.0.3 pinned raw file](https://raw.githubusercontent.com/licat233/product-detail-designer/v1.0.3/SKILL.md).
+1. Attach [SKILL.md](SKILL.md) to the conversation or provide the [v1.0.4 pinned raw file](https://raw.githubusercontent.com/licat233/product-detail-designer/v1.0.4/SKILL.md).
 2. Attach the product images and any available product documents.
 3. Send your own product-detail-page prompt.
 4. The assistant checks the output language, image dimensions/aspect ratio, ecommerce platform/placement, and sales region, asking for all missing details in one concise message.

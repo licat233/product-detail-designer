@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.0.4 — 2026-11-26
+
+- Replaced the screen-first mindset with mandatory **Page first, slices second** composition.
+- Made the complete vertical ecommerce page—not each image file—the design unit.
+- Limited the page-level H1 / primary title to the first slice only.
+- Prohibited per-slice product-introduction titles, repeated hero openings, summaries, website footers, repeated logos, contact bars, and independent sign-offs.
+- Clarified that file boundaries do not need to align with content-section boundaries; content and visual scenes may continue across slices.
+- Required later slices to be generated sequentially as continuations of the previous slice, using image extension/outpainting when supported or the previous image as a continuation reference.
+- Added explicit page-level and slice-boundary audits to reject title/footer repetition and slide-like restarts.
+
 ## 1.0.3 — 2026-11-25
 
 - Added mandatory Continuous Long-Page Composition for multi-image ecommerce detail pages.
