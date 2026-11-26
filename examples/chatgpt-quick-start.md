@@ -46,7 +46,7 @@ I will provide product photos and any available product documents, specification
 First review the supplied materials, then check these four production details:
 
 1. **Output language** — the language that should appear in the final images.
-2. **Image dimensions / aspect ratio** — the pixel dimensions or ratio for each screen.
+2. **Image dimensions / aspect ratio** — the pixel dimensions or ratio for each image.
 3. **Ecommerce platform / placement** — for example, Amazon product images, Amazon A+ Content, Shopify product-page media, Alibaba.com product detail page, or another placement.
 4. **Sales region / target market** — for example, the US, Europe, Japan, Southeast Asia, the Middle East, or global.
 
