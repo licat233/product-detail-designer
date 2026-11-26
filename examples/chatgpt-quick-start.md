@@ -4,10 +4,10 @@ This is an optional starter for an ordinary ChatGPT conversation. It does not re
 
 ## 中文
 
-请使用 **Product Detail Designer v1.0.3** Skill 帮我制作电商产品详情页。
+请使用 **Product Detail Designer v1.0.4** Skill 帮我制作电商产品详情页。
 
 **Skill 文件（请先完整阅读）：**
-https://raw.githubusercontent.com/licat233/product-detail-designer/v1.0.3/SKILL.md
+https://raw.githubusercontent.com/licat233/product-detail-designer/v1.0.4/SKILL.md
 
 我会提供产品图片，以及产品说明书、规格书或其他相关资料。
 
@@ -24,7 +24,11 @@ https://raw.githubusercontent.com/licat233/product-detail-designer/v1.0.3/SKILL.
 
 严格区分产品事实资料与视觉设计参考：说明书、规格书、宣传册 PDF 默认只用于提取产品信息，不得照搬、临摹、换色改版或按页改编其 UI、布局、图标、表格和内容顺序。除非我明确要求复刻或改版原文件，否则必须根据产品、买家、市场和平台独立策划并设计全新的电商详情页。产品实拍图用于识别和呈现真实产品，不得擅自改变产品外观。
 
-默认把全部图片设计成**一张连续纵向详情页的相邻切片**，不是多张独立海报或 PPT。图片上下边缘必须自然衔接，背景、光线、空间和视觉动线要连续；不要添加页眉、页脚、页码、01–08 序号、重复 Logo / 标题栏、装饰性边角、整屏边框或 PPT 式页面框架。文件编号只用于内部管理，不得出现在买家可见画面中。每屏可以有不同内容和构图，但不能像一张独立幻灯片。
+必须采用 **Page-first, Slice-second（先设计整页，再切分图片）** 的方法：先把整张纵向详情页作为一个完整页面设计，再按平台要求分成多个图片文件。页面是设计单位，图片只是交付切片，不能逐张设计成独立海报或 PPT。
+
+整张页面只能有一个主标题（H1），只放在第一张图片。中间图片不得重新出现产品介绍标题、独立 Hero、总结标题或标题栏。任何图片都不得添加网站 Footer、重复 Logo、联系信息底栏或独立收尾；如果确实需要 CTA，只能在整张页面真正结束的位置出现一次。内容模块可以跨越图片切分边界，切分位置不等于内容模块的结束位置。
+
+后续图片必须直接延续上一张的视觉和内容，不得重新开始一个完整版式。不要在每张图的顶部安排标题区，也不要在每张图的底部安排 Footer 区。拼接后必须像一张自然向下滚动的详情页，而不是多张 PPT。
 
 严格保护产品真实外观和资料准确性。不要编造参数或认证，不要安装依赖，不要编写代码，也不要制作未要求的独立背景、1:3 母版、HTML 预览或其他中间文件。生成后自行检查并修复产品、文字、参数和排版问题。
 
@@ -32,10 +36,10 @@ https://raw.githubusercontent.com/licat233/product-detail-designer/v1.0.3/SKILL.
 
 ## English
 
-Use **Product Detail Designer v1.0.3** to create ecommerce product detail page images.
+Use **Product Detail Designer v1.0.4** to create ecommerce product detail page images.
 
 **Read the Skill first:**
-https://raw.githubusercontent.com/licat233/product-detail-designer/v1.0.3/SKILL.md
+https://raw.githubusercontent.com/licat233/product-detail-designer/v1.0.4/SKILL.md
 
 I will provide product photos and any available product documents, specifications, or brochures.
 
@@ -52,7 +56,11 @@ Once all four items are confirmed or explicitly delegated, generate the final im
 
 Keep product evidence separate from visual design references. Product manuals, specification sheets, and brochure PDFs are factual sources by default; do not copy, trace, recolor, redesign, or adapt their page UI, layouts, icon grids, tables, or page sequence. Unless I explicitly request a faithful redesign of the source document, independently plan and design a new ecommerce detail page for the product, buyer, market, and platform. Use real product photos to preserve the product's actual appearance.
 
-Design all images as **adjacent slices of one continuous vertical ecommerce page**, not as independent posters or PowerPoint slides. The top and bottom edges must connect naturally, with consistent background, lighting, spatial depth, and visual flow. Do not add headers, footers, page numbers, 01–08 labels, repeated logo/title bars, decorative corners, full-image borders, or slide-like page frames. File numbering is internal only and must never appear in buyer-visible artwork. Each slice may have distinct content and composition, but must not look like a standalone slide.
+Use **Page first, slices second**: design the complete vertical ecommerce page as one page before dividing it into separate image files. The page is the design unit; each image is only a delivery slice. Never design every image as a separate poster or slide.
+
+The complete page has **one primary title / H1 only**, placed in the first image. Intermediate images must not restart with another product-introduction title, standalone hero, summary headline, or title bar. Do not add a website footer, repeated logo, contact-information bar, or separate sign-off to any image. If a CTA is genuinely needed, place it once at the actual end of the complete page. Content modules may continue across file boundaries; a file boundary is not a content-section ending.
+
+Every later image must directly continue the previous image's visual and content flow. Do not reserve a title area at the top or a footer area at the bottom of every image. When stacked, the result must read like one naturally scrolling ecommerce page, not a collection of PowerPoint slides.
 
 Preserve the real product and keep all factual claims accurate. Do not invent specifications or certifications, install dependencies, write code, or create unrequested standalone backgrounds, 1:3 masters, HTML previews, or other intermediate assets. Inspect and repair product, copy, specification, and layout errors before delivery.
 
