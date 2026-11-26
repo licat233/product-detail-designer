@@ -176,7 +176,7 @@ Consider:
 - Clear reading order and enough negative space for legibility.
 - One coherent page-level composition, with content modules arranged in a continuous buyer journey.
 
-Keep the set visually related without making every image look identical. Vary camera angle, crop, product scale, layout, and information density while retaining a recognizable visual language.
+Keep one page-wide composition. Vary camera angle, crop, product scale, layout, and information density naturally as the page progresses; do not assign a fresh layout or visual opening to every file.
 
 ### Page-first composition (mandatory)
 
