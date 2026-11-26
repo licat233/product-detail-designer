@@ -2,7 +2,8 @@
 
 **A lightweight, image-first AI skill for creating ecommerce product detail pages.**
 
-Latest release: [v1.0.5](https://github.com/licat233/product-detail-designer/releases/tag/v1.0.5)
+Latest release: [v1.0.5](https://github.com/licat233/product-detail-designer/releases/tag/v1.0.5)  
+Development: [v1.0.6 branch](https://github.com/licat233/product-detail-designer/tree/feat/v1.0.6-page-first-continuity)
 
 [简体中文](#简体中文) · [English](#english)
 
@@ -25,7 +26,7 @@ Product Detail Designer 是一个面向整个电商行业的通用 AI Skill。�
 - **页面标题只出现一次：** 主标题只在第一张出现；中间图片不得重新介绍产品或添加自己的标题栏。
 - **不做图片 Footer：** 任何切片都不添加网站页脚、重复 Logo、联系信息底栏或独立收尾；真正的 CTA 只在整张页面末尾出现一次（如有必要）。
 - **内容自然跨越切片：** 切分边界不等于内容模块边界，后续图片必须延续上一张，而不是重新开始。
-- **中间图片必须开放式结尾：** 除最后一张外，每张图片底部都必须有视觉元素延续到下一张；不能出现空白收尾、渐隐、完整卡片网格或其他结束构图。
+- **中间图片保持页面连续性：** 除最后一张外，不得出现独立收尾或重新开始的海报构图。根据图像工具实际能力选择画布扩展、参考图延续或色调连续；不强制添加穿过底边的实体物体，也不虚构像素级无缝拼接能力。
 - **视觉统一：** 整张页面保持统一的视觉动线和空间关系，内容可以变化，但不重启页面结构。
 - **少做无用中间件：** 不默认制作独立背景、1:3 母版、Moodboard、HTML 预览或 Contact Sheet。
 
@@ -77,7 +78,7 @@ It is brand-neutral and category-neutral. It does not depend on a particular com
 - **One page title only.** The primary title appears once, in the first slice. Later slices must not restart with another page title or product introduction.
 - **No per-image footer.** No website footer, repeated logo, contact bar, or separate sign-off on any slice. If needed, one CTA may appear only at the true end of the complete page.
 - **Content flows across file boundaries.** A file boundary is not a section ending; later slices continue the previous page flow instead of restarting it.
-- **Intermediate slices stay open-ended.** Every image except the final one must carry a visible visual element through its bottom edge into the next slice; no blank endings, fades, completed card grids, or other closing compositions.
+- **Keep intermediate slices continuous.** Every image except the final one must continue the same page flow without a standalone ending or poster-like restart. Choose canvas extension, reference continuation, or tonal continuity according to the image tool's actual capabilities; do not force an artificial object through the bottom edge or claim pixel-perfect seams without verification.
 - **Keep the page coherent.** Vary content and composition without restarting the page structure or visual flow.
 - **Avoid unnecessary intermediates.** Separate backgrounds, 1:3 masters, moodboards, HTML reviews, and contact sheets are not default deliverables.
 
