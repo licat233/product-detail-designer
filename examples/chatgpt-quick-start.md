@@ -52,7 +52,7 @@ First review the supplied materials, then check these four production details:
 
 Do not ask again for information I have already provided. If multiple items are missing, ask for all of them in one concise message. If the platform and placement are known but I do not know the image size, recommend a suitable size or ratio and ask me to confirm. If I explicitly delegate a decision, choose a sensible option and briefly state the assumption.
 
-Once all four items are confirmed or explicitly delegated, generate the final images directly using the available image-generation capability. Use 8 screens by default unless I specify otherwise.
+Once all four items are confirmed or explicitly delegated, generate the final images directly using the available image-generation capability. Use 8 image slices by default unless I specify otherwise.
 
 Keep product evidence separate from visual design references. Product manuals, specification sheets, and brochure PDFs are factual sources by default; do not copy, trace, recolor, redesign, or adapt their page UI, layouts, icon grids, tables, or page sequence. Unless I explicitly request a faithful redesign of the source document, independently plan and design a new ecommerce detail page for the product, buyer, market, and platform. Use real product photos to preserve the product's actual appearance.
 
