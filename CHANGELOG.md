@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.0.6 — Unreleased
+
+- Reworked slice continuity around three capability-aware strategies: canvas extension, reference continuation, and tonal continuity.
+- Removed the mandatory physical continuity-carrier and fixed 10–15% bottom-zone requirements; natural composition takes priority over artificial seam devices.
+- Clarified that reference-based generation does not guarantee pixel-perfect edge matching and must not be described as outpainting.
+- Added an internal Page Blueprint to organize the full buyer journey, global visual specification, slice map, and handoff intent without creating unrequested user-facing deliverables or approval gates.
+- Added a per-slice prompt compiler so each image-generation call contains only the current slice's task and relevant references.
+- Clarified reference roles: product photos establish product identity, previous slices establish page continuity, and style references are used only when explicitly designated.
+- Strengthened capability honesty: if a user requires pixel-level continuity and the available tool cannot support it, explain the limitation before substituting another strategy.
+- Updated the single-image-at-a-time generation, adjacent-slice review, and smallest-scope repair rules.
+- Updated the bilingual README and ChatGPT quick start.
+
 ## 1.0.5 — 2026-11-26
 
 - Added a mandatory **Open-ended Slice** contract: every non-final image must end in the middle of a continuing page, not with a visual closing composition.
