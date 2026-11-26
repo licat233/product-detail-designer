@@ -2,7 +2,7 @@
 name: product-detail-designer
 description: Create commercial-quality ecommerce product detail page images from product photos, product documents, and visual references. Use when a user asks to create, design, generate, or improve product listing images, ecommerce detail pages, product feature panels, or long-form product page visuals.
 license: MIT
-version: 1.0.3
+version: 1.0.4
 ---
 
 # Product Detail Designer
@@ -174,56 +174,74 @@ Consider:
 - Palette, contrast, lighting, materials, typography, spacing, image treatment, and visual hierarchy.
 - A useful mix of product hero views, close-ups, feature explanations, diagrams, comparisons, use cases, installation steps, and specifications where relevant.
 - Clear reading order and enough negative space for legibility.
-- A distinct purpose and composition for each page or screen.
+- One coherent page-level composition, with content modules arranged in a continuous buyer journey.
 
 Keep the set visually related without making every image look identical. Vary camera angle, crop, product scale, layout, and information density while retaining a recognizable visual language.
 
-### Continuous long-page composition (mandatory)
+### Page-first composition (mandatory)
 
-**Treat the complete set as one vertical ecommerce page, delivered as adjacent image slices—not as a collection of independent slides, posters, or cards.** A "screen" or "slice" is only a production/file boundary. It is not a buyer-visible page boundary.
+**Design one complete vertical ecommerce page first. Only afterward divide that page into separate image files.** The page is the design unit. A Screen / Slice is only a file-delivery boundary; it is not a page, slide, poster, panel, or self-contained content module.
 
-- Plan one continuous top-to-bottom reading experience and buyer journey across the entire set.
-- Every slice must connect naturally to its neighbors. Define a `top_edge_anchor` and `bottom_edge_anchor` for each slice; the previous slice's `bottom_edge_anchor` must inform the next slice's `top_edge_anchor`. Adjacent edges should share compatible background, color, lighting, texture, spatial depth, and visual direction.
-- Extend the scene/background naturally to all four image edges. The bottom of one slice and the top of the next must feel like adjoining parts of the same page, not the end and beginning of separate slides.
-- When a product, object, line, shadow, light beam, surface, or other visual element crosses a seam, align its position, scale, direction, and appearance across both slices. Do not create a crossing element unless it can be aligned reliably.
-- Transitions between content areas may change scene, color, or density, but should be gradual and compositionally connected rather than abrupt slide resets. A shared visual world does not require one identical background on every slice.
-- Keep typography, palette, lighting logic, material treatment, and spacing consistent across the full page while allowing meaningful variation in composition and information density.
-- The first slice should enter the page naturally; the final slice should conclude it naturally. Do not turn them into separate cover and back-cover posters unless explicitly requested.
-- Content modules may have their own internal cards or panels when useful, but do not frame every slice as a self-contained presentation slide.
+#### Page-level structure
 
-**No slide chrome or page furniture:** unless explicitly requested, do not add page headers, footers, navigation bars, page numbers, screen/slice numbers, 01–08 labels, repeated logo/product title bars, corner ornaments, page borders, full-canvas frames, or decorative top/bottom rules. Do not repeat the brand logo or product name at the top of every slice. Do not place a visible "01 / PRODUCT OVERVIEW" or equivalent chapter marker on each image. Real instructional step numbers, model numbers, specifications, and quantities remain allowed.
+- Plan the complete top-to-bottom buyer journey as one uninterrupted page. Do not independently design each image and try to make the results look related afterward.
+- The page gets **one primary title / H1 only**, placed in the opening of the first slice. Never add a new page title, product-introduction headline, masthead, or hero-title band to the top of every later slice.
+- Intermediate slices continue the page. They do not need their own introduction, headline, summary, conclusion, or CTA.
+- Do not add a footer to any slice. A product-detail image sequence is not a website shell. Do not invent a website footer, contact footer, logo footer, repeated bottom bar, or per-image sign-off. If a final CTA is useful, place it once at the actual end of the complete page and integrate it into the content; it must not look like a footer.
+- Show the brand logo, product name, and model identifier only where they genuinely help the page. Do not repeat them as fixed top or bottom furniture on every image.
+- Section headings are allowed when a new content section genuinely begins, but they must be part of the flowing page—not a repeated title bar or a large standalone heading that resets each image.
+- A slice may begin or end partway through a visual scene or content module. It does not need to be independently complete. Content modules may span across file boundaries.
+- Choose slice boundaries after planning the complete page. Do not force every boundary to coincide with the end of a feature, card, section, or buyer question.
+- Keep critical copy, specifications, and labels away from cut boundaries so text is not severed. Let the background, scene, product-scale rhythm, diagrams, surfaces, and other visual elements carry the continuity across those boundaries.
+- A page may move between scenes or content areas, but transitions must feel like a continuous scroll. Do not restart the composition, background, lighting, or visual hierarchy at the top of each file.
 
-- Do not create a 1:3 visual master or other continuity canvas unless the user explicitly requests it.
-- Do not split one overview image or contact sheet into final deliverables.
+#### Slice boundary contract
+
+For each slice, define:
+
+- `slice_entry_state`: what is already happening as the viewer scrolls into this portion of the page.
+- `slice_exit_state`: what remains visually or informationally in progress as the viewer scrolls out.
+- `top_edge_anchor`: exact visible details at the top edge, including background, surfaces, objects, positions, lighting, and direction.
+- `bottom_edge_anchor`: exact visible details at the bottom edge that the next slice must continue.
+
+The next slice's `top_edge_anchor` must be derived from the previous slice's `bottom_edge_anchor`. Anchors must describe concrete visual facts, not vague instructions such as "same style" or "similar background".
+
+#### No slide chrome or page furniture
+
+Unless explicitly requested, do not add:
+
+- Page headers, footers, navigation bars, page numbers, screen/slice numbers, 01–08 labels, or chapter markers.
+- Repeated page titles, product-introduction titles, logo bars, product-name bars, or model-number mastheads.
+- Repeated top/bottom banners, contact strips, decorative rules, corner ornaments, page borders, full-canvas frames, or full-slice card containers.
+- A self-contained "title at top + hero + feature cards + footer" composition in every image.
+- A new hero image or product introduction at the beginning of every slice.
+- An ending treatment, summary panel, or CTA at the bottom of every slice.
+
+Real instructional step numbers, model numbers, specifications, and quantities remain allowed when they are genuine content.
+
+If the user explicitly requests a 1:3 visual master or other continuity reference, use it to plan the page-level composition. It must not turn into a row of separate poster panels. Do not split an overview image or contact sheet into final deliverables.
 
 ## Page structure
 
-Follow the requested number of image files. If the user requests an 8-screen page, create exactly 8 adjacent slices of one continuous vertical page—not 8 visually independent screens.
+Follow the requested number of image files. If the user requests an 8-screen page, create exactly 8 slices of one continuous vertical page.
 
-If the user does not specify a count for a long-form ecommerce detail page, use 8 as a practical default, adjusting only when the product or platform clearly calls for a different scope.
+Plan the buyer journey at the **page level**, not as eight independent mini-briefs. The page may contain product introduction, features, construction details, operation, applications, configurations, specifications, trust information, and one final purchase/contact prompt. Distribute these modules according to the product and platform; a module may continue across more than one slice, and a slice may contain parts of more than one module.
 
-Each slice should answer a different buyer question or advance a different part of the purchase decision, while remaining part of the same continuous page. Avoid repeating the same hero layout, headline pattern, icon row, or feature-card grid. Do not make every slice independently self-contained.
+Do not require every slice to answer a different buyer question. Some adjacent slices may continue the same question or content thread. The goal is a coherent page, not eight individually complete answers.
 
-Build a natural buyer journey rather than forcing every product into a rigid template. Depending on the product, useful modules may include:
-
-- Product introduction and primary value.
-- Main features and practical benefits.
-- Construction, materials, or close-up details.
-- How it works, installation, or operation.
-- Application scenarios and compatibility.
-- Product variants, configurations, or specifications.
-- Evidence, limitations, and purchase confidence.
-- A final selection or contact prompt.
-
-Do not add a module merely to fill space. Do not show screen-order numbers (01–08, Screen 1, etc.) unless the user explicitly requests visible numbering. Treat all file/slice numbering as internal production metadata only. Real step numbers, model numbers, measurements, and quantities remain valid.
+Do not add a module merely to fill space. Treat file numbering as internal production metadata only. Real step numbers, model numbers, measurements, and quantities remain valid.
 
 ## Image generation
 
 - Generate the actual requested final images, not instructions for the user to generate them.
 - Give each slice a distinct content purpose and an appropriate composition while preserving the page-wide flow. Do not design it as an isolated slide or ask the image model for eight unrelated copies of one generic prompt.
 - Use individual product images as product-appearance references. Use a visual/style reference only when the user explicitly designates it as such. Never use a full PDF page as a style reference by default; follow the Source-material roles and visual independence rules.
-- Generate each requested image as a separate full-resolution file, but design neighboring files as adjoining slices of one long page. Generate in sequence where practical; carry forward the previous slice's outgoing edge handoff as the next slice's incoming edge condition. When image references are supported, use the adjacent slice as a continuity reference without copying its whole composition.
-- Before finalizing, inspect the adjacent top/bottom edges at their intended displayed width. Repair mismatched background, lighting, texture, perspective, object alignment, or abrupt transitions. Do not add borders, blur, mirrored padding, or other devices to hide a failed join.
+- Generate the first slice as the single opening of the page. It may contain the page's one primary title / H1 and opening hero.
+- Generate all later slices **sequentially as continuations of the existing page**, not as fresh compositions. Use the previous slice as the visual reference. If the image tool supports image extension or outpainting, extend the previous image downward from its bottom edge; otherwise, explicitly continue the previous scene and composition from its `bottom_edge_anchor`.
+- For Slice 02 and later, do not add a new page title, product introduction, repeated hero, summary, footer, contact bar, or bottom sign-off. Begin with the continuation of the prior page flow. Add a section heading only when the page's actual content structure calls for one, not merely because a new file begins.
+- Preserve the page-wide visual hierarchy and scene. The top edge of a later slice must continue the previous slice's bottom edge; do not restart the background, lighting, camera world, typography system, or layout.
+- Keep text and critical data away from the cut line. Do not split a word, sentence, specification, or label across files. Let visual environment and non-text elements provide the edge continuity.
+- Before finalizing, stack the actual files in order and inspect them as one scrolling page. Repair title/footer repetition, self-contained slide layouts, abrupt scene resets, mismatched background, lighting, texture, perspective, or object alignment. Do not add borders, blur, mirrored padding, or other devices to hide a failed join.
 - Keep text concise enough to render legibly. Preserve exact critical copy and data; inspect every generated image for spelling, numbers, units, and unwanted pseudo-text.
 - Do not add fake UI, badges, seals, ratings, certifications, watermarks, or decorative labels.
 - Do not use blur, mirrored padding, stretching, oversized frames, or arbitrary crops to conceal a composition or aspect-ratio problem.
@@ -236,18 +254,21 @@ Before delivery, inspect each image for:
 2. **Copy:** spelling, exact critical wording, numbers, units, and legibility.
 3. **Claims:** no unsupported technical or commercial statements.
 4. **Design:** clear hierarchy, professional ecommerce quality, useful imagery, and no filler.
-5. **Long-page continuity:** all images read as one vertical page when stacked in order; adjacent edges connect naturally without abrupt resets or visible slide boundaries.
-6. **No slide chrome:** no unrequested headers, footers, page numbers, repeated title bars/logos, corner ornaments, page borders, or full-slice frames.
-7. **Set consistency:** coherent visual language with meaningful composition variety.
-8. **Visual independence:** the final design is an independently conceived ecommerce page, not a restyled, traced, or page-by-page adaptation of a supplied brochure or specification PDF unless explicitly requested.
-9. **Completeness:** the requested number, order, ratio, and deliverables are present.
+5. **Page-first structure:** the complete sequence has one page-level opening and no repeated per-slice title, hero, summary, or footer.
+6. **True continuation:** Slice 02 and later continue the previous slice's page flow instead of restarting with a new title, product introduction, or independent composition.
+7. **Long-page continuity:** all images read as one vertical page when stacked in order; adjacent edges connect naturally without abrupt resets or visible slide boundaries.
+8. **No slide chrome:** no unrequested headers, footers, page numbers, repeated title bars/logos, corner ornaments, page borders, or full-slice frames.
+9. **Set consistency:** coherent visual language with meaningful composition variety.
+10. **Visual independence:** the final design is an independently conceived ecommerce page, not a restyled, traced, or page-by-page adaptation of a supplied brochure or specification PDF unless explicitly requested.
+11. **Completeness:** the requested number, order, ratio, and deliverables are present.
 
 Repair the smallest responsible part:
 
 - Text issue → revise the affected text or image.
 - Product issue → correct the product depiction.
 - Scene issue → revise that image's scene or composition.
-- One-screen issue → repair only that screen.
+- One-slice issue → repair only that slice.
+- Repeated title/footer or slide structure → revise the page-level layout rule and regenerate every affected slice.
 - Set-wide inconsistency → adjust only the images affected by the shared visual rule.
 
 Do not regenerate the entire set by default. Do not call a task complete merely because image generation returned successfully.
