@@ -223,7 +223,7 @@ If the user explicitly requests a 1:3 visual master or other continuity referenc
 
 ## Page structure
 
-Follow the requested number of image files. If the user requests an 8-screen page, create exactly 8 slices of one continuous vertical page.
+Follow the requested number of image files. If the user requests an 8-image detail page, create exactly 8 slices of one continuous vertical page.
 
 Plan the buyer journey at the **page level**, not as eight independent mini-briefs. The page may contain product introduction, features, construction details, operation, applications, configurations, specifications, trust information, and one final purchase/contact prompt. Distribute these modules according to the product and platform; a module may continue across more than one slice, and a slice may contain parts of more than one module.
 
@@ -234,7 +234,7 @@ Do not add a module merely to fill space. Treat file numbering as internal produ
 ## Image generation
 
 - Generate the actual requested final images, not instructions for the user to generate them.
-- Give each slice a distinct content purpose and an appropriate composition while preserving the page-wide flow. Do not design it as an isolated slide or ask the image model for eight unrelated copies of one generic prompt.
+- Place only the portion of the page's content that naturally belongs in each slice. Do not force a separate content module or a complete composition into every file. Do not design any slice as an isolated slide or ask the image model for eight unrelated copies of one generic prompt.
 - Use individual product images as product-appearance references. Use a visual/style reference only when the user explicitly designates it as such. Never use a full PDF page as a style reference by default; follow the Source-material roles and visual independence rules.
 - Generate the first slice as the single opening of the page. It may contain the page's one primary title / H1 and opening hero.
 - Generate all later slices **sequentially as continuations of the existing page**, not as fresh compositions. Use the previous slice as the visual reference. If the image tool supports image extension or outpainting, extend the previous image downward from its bottom edge; otherwise, explicitly continue the previous scene and composition from its `bottom_edge_anchor`.
@@ -257,7 +257,7 @@ Before delivery, inspect each image for:
 5. **Page-first structure:** the complete sequence has one page-level opening and no repeated per-slice title, hero, summary, or footer.
 6. **True continuation:** Slice 02 and later continue the previous slice's page flow instead of restarting with a new title, product introduction, or independent composition.
 7. **Long-page continuity:** all images read as one vertical page when stacked in order; adjacent edges connect naturally without abrupt resets or visible slide boundaries.
-8. **No slide chrome:** no unrequested headers, footers, page numbers, repeated title bars/logos, corner ornaments, page borders, or full-slice frames.
+8. **No slide chrome:** no unrequested headers, footers, page numbers, repeated title bars/logos, corner ornaments, page borders, full-slice frames, or per-image closing areas.
 9. **Set consistency:** coherent visual language with meaningful composition variety.
 10. **Visual independence:** the final design is an independently conceived ecommerce page, not a restyled, traced, or page-by-page adaptation of a supplied brochure or specification PDF unless explicitly requested.
 11. **Completeness:** the requested number, order, ratio, and deliverables are present.
