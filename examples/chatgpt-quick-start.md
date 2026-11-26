@@ -4,10 +4,10 @@ This is an optional starter for an ordinary ChatGPT conversation. It does not re
 
 ## 中文
 
-请使用 **Product Detail Designer v1.0.4** Skill 帮我制作电商产品详情页。
+请使用 **Product Detail Designer v1.0.5** Skill 帮我制作电商产品详情页。
 
 **Skill 文件（请先完整阅读）：**
-https://raw.githubusercontent.com/licat233/product-detail-designer/v1.0.4/SKILL.md
+https://raw.githubusercontent.com/licat233/product-detail-designer/v1.0.5/SKILL.md
 
 我会提供产品图片，以及产品说明书、规格书或其他相关资料。
 
@@ -26,7 +26,7 @@ https://raw.githubusercontent.com/licat233/product-detail-designer/v1.0.4/SKILL.
 
 必须采用 **Page-first, Slice-second（先设计整页，再切分图片）** 的方法：先把整张纵向详情页作为一个完整页面设计，再按平台要求分成多个图片文件。页面是设计单位，图片只是交付切片，不能逐张设计成独立海报或 PPT。
 
-整张页面只能有一个主标题（H1），只放在第一张图片。中间图片不得重新出现产品介绍标题、独立 Hero、总结标题或标题栏。任何图片都不得添加网站 Footer、重复 Logo、联系信息底栏或独立收尾；如果确实需要 CTA，只能在整张页面真正结束的位置出现一次。内容模块可以跨越图片切分边界，切分位置不等于内容模块的结束位置。
+整张页面只能有一个主标题（H1），只放在第一张图片。中间图片不得重新出现产品介绍标题、独立 Hero、总结标题或标题栏。任何图片都不得添加网站 Footer、重复 Logo、联系信息底栏或独立收尾；如果确实需要 CTA，只能在整张页面真正结束的位置出现一次。内容模块可以跨越图片切分边界，切分位置不等于内容模块的结束位置。除最后一张外，每张图片的底部都必须保持开放：至少有一个非文字视觉元素延伸到下边缘之外，并在下一张继续。禁止底部留白收尾、渐隐、完整卡片网格、装饰性底栏或其他视觉结束方式。图片必须一张一张顺序生成，不得批量生成后续切片。
 
 后续图片必须直接延续上一张的视觉和内容，不得重新开始一个完整版式。不要在每张图的顶部安排标题区，也不要在每张图的底部安排 Footer 区。拼接后必须像一张自然向下滚动的详情页，而不是多张 PPT。
 
@@ -36,10 +36,10 @@ https://raw.githubusercontent.com/licat233/product-detail-designer/v1.0.4/SKILL.
 
 ## English
 
-Use **Product Detail Designer v1.0.4** to create ecommerce product detail page images.
+Use **Product Detail Designer v1.0.5** to create ecommerce product detail page images.
 
 **Read the Skill first:**
-https://raw.githubusercontent.com/licat233/product-detail-designer/v1.0.4/SKILL.md
+https://raw.githubusercontent.com/licat233/product-detail-designer/v1.0.5/SKILL.md
 
 I will provide product photos and any available product documents, specifications, or brochures.
 
@@ -58,7 +58,7 @@ Keep product evidence separate from visual design references. Product manuals, s
 
 Use **Page first, slices second**: design the complete vertical ecommerce page as one page before dividing it into separate image files. The page is the design unit; each image is only a delivery slice. Never design every image as a separate poster or slide.
 
-The complete page has **one primary title / H1 only**, placed in the first image. Intermediate images must not restart with another product-introduction title, standalone hero, summary headline, or title bar. Do not add a website footer, repeated logo, contact-information bar, or separate sign-off to any image. If a CTA is genuinely needed, place it once at the actual end of the complete page. Content modules may continue across file boundaries; a file boundary is not a content-section ending.
+The complete page has **one primary title / H1 only**, placed in the first image. Intermediate images must not restart with another product-introduction title, standalone hero, summary headline, or title bar. Do not add a website footer, repeated logo, contact-information bar, or separate sign-off to any image. If a CTA is genuinely needed, place it once at the actual end of the complete page. Content modules may continue across file boundaries; a file boundary is not a content-section ending. Every image except the final one must keep an open bottom edge: at least one non-text visual element must extend beyond the lower edge and continue in the next image. No blank bottom margin, fade-out, completed card grid, decorative bottom bar, or other visual ending is allowed. Generate slices one at a time in sequence; never batch-generate the remaining slices.
 
 Every later image must directly continue the previous image's visual and content flow. Do not reserve a title area at the top or a footer area at the bottom of every image. When stacked, the result must read like one naturally scrolling ecommerce page, not a collection of PowerPoint slides.
 
