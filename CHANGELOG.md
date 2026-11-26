@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.0.5 — 2026-11-26
+
+- Added a mandatory **Open-ended Slice** contract: every non-final image must end in the middle of a continuing page, not with a visual closing composition.
+- Added `top_edge_mode`, `bottom_edge_mode`, `continuity_carrier`, and `next_slice_handoff` to the slice boundary contract.
+- Required a visible non-text continuity carrier to reach or cross the bottom edge of every non-final slice and continue into the next.
+- Prohibited visual closing cues on intermediate slices, including bottom whitespace, fades, vignettes, completed card grids, divider lines, end bands, and isolated final compositions.
+- Reserved a 10–15% lower continuation zone for non-final slices, keeping critical text away from crop boundaries.
+- Required sequential one-image-at-a-time generation; never batch-generate the remaining slices.
+- Added a mandatory open-bottom inspection after each generation and a full-page audit that allows only the final slice to close.
+- Clarified that a closed intermediate slice must be regenerated before the next slice is produced.
+
 ## 1.0.4 — 2026-11-26
 
 - Replaced the screen-first mindset with mandatory **Page first, slices second** composition.
