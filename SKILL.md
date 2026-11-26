@@ -2,7 +2,7 @@
 name: product-detail-designer
 description: Create commercial-quality ecommerce product detail page images from product photos, product documents, and visual references. Use when a user asks to create, design, generate, or improve product listing images, ecommerce detail pages, product feature panels, or long-form product page visuals.
 license: MIT
-version: 1.0.4
+version: 1.0.5
 ---
 
 # Product Detail Designer
@@ -206,6 +206,32 @@ For each slice, define:
 
 The next slice's `top_edge_anchor` must be derived from the previous slice's `bottom_edge_anchor`. Anchors must describe concrete visual facts, not vague instructions such as "same style" or "similar background".
 
+#### Open-ended slice contract (mandatory)
+
+**Every non-final slice must end open. Its bottom edge is a crop boundary in the middle of a continuing page—not a visual ending.** Removing a footer is not enough: a slice can still look finished through composition, spacing, lighting, or a completed content block.
+
+For every slice, define these additional fields:
+
+- `top_edge_mode`: `opening` for Slice 01; `continuation` for every later slice.
+- `bottom_edge_mode`: `open` for every non-final slice; `closed` only for the final slice.
+- `continuity_carrier`: at least one concrete, non-text visual element that reaches or crosses the bottom crop edge and visibly continues beyond it.
+- `next_slice_handoff`: what the next slice must pick up from this exact bottom edge, including position, direction, scale, perspective, lighting, and background state.
+
+Rules for every non-final slice:
+
+- Its bottom 10–15% is a **continuation zone**, not a closing zone. Keep headlines, body copy, specifications, labels, and other critical text outside this zone.
+- At least one continuity carrier must physically meet or exit through the bottom edge. Suitable carriers include a continuous shelf or track, cable, product-supporting surface, architectural plane, perspective line, diagram path, light strip, shadow, or other scene element that can visibly continue in the next slice.
+- The carrier must continue into the next slice at a compatible position and direction. A merely similar background color is not a continuity carrier.
+- Do not make the lower edge feel balanced, complete, or final. Avoid bottom-aligned card rows, completed feature grids, isolated centered product compositions, large empty bottom margins, fade-to-blank, vignette, darkening, full-width divider lines, decorative end bands, closing panels, summaries, or sign-offs.
+- Do not end the visual scene at the bottom edge. Do not let the page background, lighting environment, surface, or perspective appear to stop there.
+- Do not cut through important product geometry or text just to create an open edge. Continue the surrounding environment or a secondary visual carrier instead.
+- The next slice must begin by continuing this carrier and scene. It must not start a new composition.
+
+Only the final slice may use `bottom_edge_mode: closed`. It may conclude the visual scene and, if appropriate, show the page's single final CTA. No earlier slice may visually conclude, even if it contains no literal footer or CTA.
+
+**Generation must be sequential and one image at a time.** Never generate Slices 03–08 as one multi-image batch. After each image is generated, inspect its bottom edge. If it looks finished, regenerate that slice before moving on. Only after its open edge and `next_slice_handoff` are accepted may it be used as the reference for the next slice. The next generation must use both the actual previous image and the next slice's planned content/handoff. If the image tool cannot preserve an open edge reliably, use a supported continuous-canvas/extension workflow or report the limitation; do not disguise separately closed images as a continuous page.
+
+
 #### No slide chrome or page furniture
 
 Unless explicitly requested, do not add:
@@ -237,11 +263,11 @@ Do not add a module merely to fill space. Treat file numbering as internal produ
 - Place only the portion of the page's content that naturally belongs in each slice. Do not force a separate content module or a complete composition into every file. Do not design any slice as an isolated slide or ask the image model for eight unrelated copies of one generic prompt.
 - Use individual product images as product-appearance references. Use a visual/style reference only when the user explicitly designates it as such. Never use a full PDF page as a style reference by default; follow the Source-material roles and visual independence rules.
 - Generate the first slice as the single opening of the page. It may contain the page's one primary title / H1 and opening hero.
-- Generate all later slices **sequentially as continuations of the existing page**, not as fresh compositions. Use the previous slice as the visual reference. If the image tool supports image extension or outpainting, extend the previous image downward from its bottom edge; otherwise, explicitly continue the previous scene and composition from its `bottom_edge_anchor`.
-- For Slice 02 and later, do not add a new page title, product introduction, repeated hero, summary, footer, contact bar, or bottom sign-off. Begin with the continuation of the prior page flow. Add a section heading only when the page's actual content structure calls for one, not merely because a new file begins.
+- Generate later slices **one at a time, sequentially**, never as a multi-image batch. Use the actual previous slice as the visual reference and include the next slice's planned content and `next_slice_handoff`. If the image tool supports image extension or outpainting, extend the previous image downward from its bottom edge; otherwise, continue the previous scene and composition from its `bottom_edge_anchor`.
+- For Slice 02 and later, do not add a new page title, product introduction, repeated hero, summary, footer, contact bar, or bottom sign-off. Begin with the continuation of the prior page flow. For every non-final slice, enforce `bottom_edge_mode: open`: keep the bottom 10–15% as a continuation zone and carry at least one visual element through the lower edge into the next slice. Only the final slice may close the composition. Add a section heading only when the page's actual content structure calls for one, not merely because a new file begins.
 - Preserve the page-wide visual hierarchy and scene. The top edge of a later slice must continue the previous slice's bottom edge; do not restart the background, lighting, camera world, typography system, or layout.
 - Keep text and critical data away from the cut line. Do not split a word, sentence, specification, or label across files. Let visual environment and non-text elements provide the edge continuity.
-- Before finalizing, stack the actual files in order and inspect them as one scrolling page. Repair title/footer repetition, self-contained slide layouts, abrupt scene resets, mismatched background, lighting, texture, perspective, or object alignment. Do not add borders, blur, mirrored padding, or other devices to hide a failed join.
+- Before finalizing, stack the actual files in order and inspect them as one scrolling page. Every non-final slice must have an open bottom edge with a visible continuity carrier; only the final slice may have a closed ending. Repair visual endings, bottom whitespace, fades, dividers, completed card/grid rows, title/footer repetition, self-contained slide layouts, abrupt scene resets, mismatched background, lighting, texture, perspective, or object alignment. Do not add borders, blur, mirrored padding, or other devices to hide a failed join.
 - Keep text concise enough to render legibly. Preserve exact critical copy and data; inspect every generated image for spelling, numbers, units, and unwanted pseudo-text.
 - Do not add fake UI, badges, seals, ratings, certifications, watermarks, or decorative labels.
 - Do not use blur, mirrored padding, stretching, oversized frames, or arbitrary crops to conceal a composition or aspect-ratio problem.
@@ -256,11 +282,12 @@ Before delivery, inspect each image for:
 4. **Design:** clear hierarchy, professional ecommerce quality, useful imagery, and no filler.
 5. **Page-first structure:** the complete sequence has one page-level opening and no repeated per-slice title, hero, summary, or footer.
 6. **True continuation:** Slice 02 and later continue the previous slice's page flow instead of restarting with a new title, product introduction, or independent composition.
-7. **Long-page continuity:** all images read as one vertical page when stacked in order; adjacent edges connect naturally without abrupt resets or visible slide boundaries.
-8. **No slide chrome:** no unrequested headers, footers, page numbers, repeated title bars/logos, corner ornaments, page borders, full-slice frames, or per-image closing areas.
-9. **Set consistency:** coherent visual language with meaningful composition variety.
-10. **Visual independence:** the final design is an independently conceived ecommerce page, not a restyled, traced, or page-by-page adaptation of a supplied brochure or specification PDF unless explicitly requested.
-11. **Completeness:** the requested number, order, ratio, and deliverables are present.
+7. **Open-ended slices:** every non-final slice has `bottom_edge_mode: open`; its lower edge visibly continues into the next slice. Only the final slice may close the page.
+8. **Long-page continuity:** all images read as one vertical page when stacked in order; adjacent edges connect naturally without abrupt resets or visible slide boundaries.
+9. **No slide chrome:** no unrequested headers, footers, page numbers, repeated title bars/logos, corner ornaments, page borders, full-slice frames, or per-image closing areas.
+10. **Set consistency:** coherent visual language with meaningful composition variety.
+11. **Visual independence:** the final design is an independently conceived ecommerce page, not a restyled, traced, or page-by-page adaptation of a supplied brochure or specification PDF unless explicitly requested.
+12. **Completeness:** the requested number, order, ratio, and deliverables are present.
 
 Repair the smallest responsible part:
 
@@ -268,6 +295,7 @@ Repair the smallest responsible part:
 - Product issue → correct the product depiction.
 - Scene issue → revise that image's scene or composition.
 - One-slice issue → repair only that slice.
+- A non-final slice has a closed bottom edge → regenerate that slice with an open continuation edge, then recheck/regenerate the following slice against the corrected handoff.
 - Repeated title/footer or slide structure → revise the page-level layout rule and regenerate every affected slice.
 - Set-wide inconsistency → adjust only the images affected by the shared visual rule.
 
