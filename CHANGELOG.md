@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.0.6 — Unreleased
+## 1.0.6 — 2026-11-27
 
 - Added **Product Appearance Integrity (P0)** as a hard acceptance gate that cannot be overridden by visual-design scores.
 - Added an internal Product Identity Lock with original identity-anchor assets, visible identity markers, unknown/unseen details, and forbidden changes.
