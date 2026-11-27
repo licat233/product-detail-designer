@@ -7,7 +7,7 @@ This is an optional starter for an ordinary ChatGPT conversation. It does not re
 请使用 **Product Detail Designer v1.0.6** Skill 帮我制作电商产品详情页。
 
 **Skill 文件（请先完整阅读）：**
-https://raw.githubusercontent.com/licat233/product-detail-designer/feat/v1.0.6-page-first-continuity/SKILL.md
+https://raw.githubusercontent.com/licat233/product-detail-designer/v1.0.6/SKILL.md
 
 我会提供产品图片，以及产品说明书、规格书或其他相关资料。
 
@@ -39,7 +39,7 @@ https://raw.githubusercontent.com/licat233/product-detail-designer/feat/v1.0.6-p
 Use **Product Detail Designer v1.0.6** to create ecommerce product detail page images.
 
 **Read the Skill first:**
-https://raw.githubusercontent.com/licat233/product-detail-designer/feat/v1.0.6-page-first-continuity/SKILL.md
+https://raw.githubusercontent.com/licat233/product-detail-designer/v1.0.6/SKILL.md
 
 I will provide product photos and any available product documents, specifications, or brochures.
 
