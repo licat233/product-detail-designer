@@ -1,5 +1,25 @@
 # Changelog
 
+## 1.0.6 — 2026-11-27
+
+- Added **Product Appearance Integrity (P0)** as a hard acceptance gate that cannot be overridden by visual-design scores.
+- Added an internal Product Identity Lock with original identity-anchor assets, visible identity markers, unknown/unseen details, and forbidden changes.
+- Separated original product identity references from previous-slice continuity references and explicit visual-style references; original product assets take precedence.
+- Added per-slice product-depiction modes: original photo, source-photo composite, constrained edit, evidence-based diagram, or no product depiction.
+- Made original-photo use the safest default; pixel preservation may only be claimed when the actual masking/layer-compositing operation preserves the source product pixels.
+- Required every product-bearing slice to be checked side by side against original identity anchors; Critical/Major drift or unverified critical features fail P0.
+- Added fail-safe recovery: replace the generated subject with the original photo or use a verified composite; never pass a rejected depiction forward as a continuity reference.
+
+- Reworked slice continuity around three capability-aware strategies: canvas extension, reference continuation, and tonal continuity.
+- Removed the mandatory physical continuity-carrier and fixed 10–15% bottom-zone requirements; natural composition takes priority over artificial seam devices.
+- Clarified that reference-based generation does not guarantee pixel-perfect edge matching and must not be described as outpainting.
+- Added an internal Page Blueprint to organize the full buyer journey, global visual specification, slice map, and handoff intent without creating unrequested user-facing deliverables or approval gates.
+- Added a per-slice prompt compiler so each image-generation call contains only the current slice's task and relevant references.
+- Clarified reference roles: product photos establish product identity, previous slices establish page continuity, and style references are used only when explicitly designated.
+- Strengthened capability honesty: if a user requires pixel-level continuity and the available tool cannot support it, explain the limitation before substituting another strategy.
+- Updated the single-image-at-a-time generation, adjacent-slice review, and smallest-scope repair rules.
+- Updated the bilingual README and ChatGPT quick start.
+
 ## 1.0.5 — 2026-11-26
 
 - Added a mandatory **Open-ended Slice** contract: every non-final image must end in the middle of a continuing page, not with a visual closing composition.

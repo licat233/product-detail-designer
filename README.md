@@ -2,7 +2,7 @@
 
 **A lightweight, image-first AI skill for creating ecommerce product detail pages.**
 
-Latest release: [v1.0.5](https://github.com/licat233/product-detail-designer/releases/tag/v1.0.5)
+Latest release: [v1.0.6](https://github.com/licat233/product-detail-designer/releases/tag/v1.0.6)
 
 [简体中文](#简体中文) · [English](#english)
 
@@ -18,14 +18,14 @@ Product Detail Designer 是一个面向整个电商行业的通用 AI Skill。�
 - **Chat-first：** 优先适配 ChatGPT 普通 Chat 会话等对话式 AI 环境。
 - **先确认制作需求：** 正式生成前确认输出语言、图片尺寸 / 比例、电商平台 / 展示位置和销售地区；缺失信息一次问完。
 - **零依赖：** 不要求安装 Python、Node.js、第三方包、脚本、API 或本地渲染环境。
-- **产品真实：** 优先保留真实产品的结构、颜色、材质、标识和关键部件。
+- **P0 产品外观完整性：** 原始产品照片是产品身份锚点；AI 优先设计产品周围的环境，而不是重绘产品。产品出现的每一屏都要对照原始素材验收；无法确认关键结构时，退回真实照片或可靠合成方案，不把漂移图当作真实产品。
 - **信息可信：** 不编造参数、认证、测试结果、销量、评价或其他商业声明。
 - **资料与设计分离：** PDF、宣传册和规格书默认只用于提取产品事实，不照搬或改编其页面 UI；最终详情页必须独立策划和设计。
 - **先设计整页，再切分图片：** 页面是设计单位，图片只是交付切片；不得逐张设计成独立海报或 PPT。
 - **页面标题只出现一次：** 主标题只在第一张出现；中间图片不得重新介绍产品或添加自己的标题栏。
 - **不做图片 Footer：** 任何切片都不添加网站页脚、重复 Logo、联系信息底栏或独立收尾；真正的 CTA 只在整张页面末尾出现一次（如有必要）。
 - **内容自然跨越切片：** 切分边界不等于内容模块边界，后续图片必须延续上一张，而不是重新开始。
-- **中间图片必须开放式结尾：** 除最后一张外，每张图片底部都必须有视觉元素延续到下一张；不能出现空白收尾、渐隐、完整卡片网格或其他结束构图。
+- **中间图片保持页面连续性：** 除最后一张外，不得出现独立收尾或重新开始的海报构图。根据图像工具实际能力选择画布扩展、参考图延续或色调连续；不强制添加穿过底边的实体物体，也不虚构像素级无缝拼接能力。
 - **视觉统一：** 整张页面保持统一的视觉动线和空间关系，内容可以变化，但不重启页面结构。
 - **少做无用中间件：** 不默认制作独立背景、1:3 母版、Moodboard、HTML 预览或 Contact Sheet。
 
@@ -33,7 +33,7 @@ Product Detail Designer 是一个面向整个电商行业的通用 AI Skill。�
 
 ChatGPT 普通 Chat 会话不会因为 GitHub 仓库公开就自动安装 Skill。使用时：
 
-1. 将 [SKILL.md](SKILL.md) 作为附件提供给 ChatGPT，或发送 [v1.0.5 固定版本原始文件](https://raw.githubusercontent.com/licat233/product-detail-designer/v1.0.5/SKILL.md)。
+1. 将 [SKILL.md](SKILL.md) 作为附件提供给 ChatGPT，或发送 [v1.0.6 固定版本原始文件](https://raw.githubusercontent.com/licat233/product-detail-designer/v1.0.6/SKILL.md)。
 2. 附上产品图片，以及已有的说明书、参数表或宣传册（如有）。
 3. 发送你的产品详情页制作提示词。
 4. ChatGPT 会先检查输出语言、图片尺寸 / 比例、电商平台 / 展示位置和销售地区；缺失的信息会在一条消息中集中确认。
@@ -70,14 +70,14 @@ It is brand-neutral and category-neutral. It does not depend on a particular com
 - **Chat-first.** Prioritize ordinary ChatGPT conversations and other conversational AI environments.
 - **Confirm the production brief.** Before final generation, confirm output language, image dimensions/aspect ratio, ecommerce platform/placement, and sales region. Ask for all missing items together.
 - **No setup dependencies.** No Python, Node.js, packages, scripts, API keys, or local rendering pipeline are required.
-- **Protect product identity.** Preserve the real product's structure, color, material, branding, and distinctive components.
+- **P0 product appearance integrity.** Original product photos are the identity anchors; AI should design the environment around the product, not redraw the product. Verify every product-bearing slice against the original assets. If critical geometry cannot be confirmed, fall back to the real photo or a verified composite rather than presenting a drifted image as the real product.
 - **Keep claims accurate.** Never invent specifications, certifications, test results, sales figures, reviews, or commercial promises.
 - **Separate evidence from design.** Product PDFs, brochures, and specification sheets are factual sources by default, not visual templates. Final ecommerce pages must be independently conceived rather than adapted from the source document's page UI.
 - **Page first, slices second.** Design one complete vertical page before dividing it into image files; never design each image as a separate poster or slide.
 - **One page title only.** The primary title appears once, in the first slice. Later slices must not restart with another page title or product introduction.
 - **No per-image footer.** No website footer, repeated logo, contact bar, or separate sign-off on any slice. If needed, one CTA may appear only at the true end of the complete page.
 - **Content flows across file boundaries.** A file boundary is not a section ending; later slices continue the previous page flow instead of restarting it.
-- **Intermediate slices stay open-ended.** Every image except the final one must carry a visible visual element through its bottom edge into the next slice; no blank endings, fades, completed card grids, or other closing compositions.
+- **Keep intermediate slices continuous.** Every image except the final one must continue the same page flow without a standalone ending or poster-like restart. Choose canvas extension, reference continuation, or tonal continuity according to the image tool's actual capabilities; do not force an artificial object through the bottom edge or claim pixel-perfect seams without verification.
 - **Keep the page coherent.** Vary content and composition without restarting the page structure or visual flow.
 - **Avoid unnecessary intermediates.** Separate backgrounds, 1:3 masters, moodboards, HTML reviews, and contact sheets are not default deliverables.
 
