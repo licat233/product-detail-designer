@@ -2,8 +2,7 @@
 
 **A lightweight, image-first AI skill for creating ecommerce product detail pages.**
 
-Latest release: [v1.0.5](https://github.com/licat233/product-detail-designer/releases/tag/v1.0.5)  
-Development: [v1.0.6 branch](https://github.com/licat233/product-detail-designer/tree/feat/v1.0.6-page-first-continuity)
+Latest release: [v1.0.6](https://github.com/licat233/product-detail-designer/releases/tag/v1.0.6)
 
 [简体中文](#简体中文) · [English](#english)
 
@@ -34,7 +33,7 @@ Product Detail Designer 是一个面向整个电商行业的通用 AI Skill。�
 
 ChatGPT 普通 Chat 会话不会因为 GitHub 仓库公开就自动安装 Skill。使用时：
 
-1. 将 [SKILL.md](SKILL.md) 作为附件提供给 ChatGPT，或发送 [v1.0.5 固定版本原始文件](https://raw.githubusercontent.com/licat233/product-detail-designer/v1.0.5/SKILL.md)。
+1. 将 [SKILL.md](SKILL.md) 作为附件提供给 ChatGPT，或发送 [v1.0.6 固定版本原始文件](https://raw.githubusercontent.com/licat233/product-detail-designer/v1.0.6/SKILL.md)。
 2. 附上产品图片，以及已有的说明书、参数表或宣传册（如有）。
 3. 发送你的产品详情页制作提示词。
 4. ChatGPT 会先检查输出语言、图片尺寸 / 比例、电商平台 / 展示位置和销售地区；缺失的信息会在一条消息中集中确认。
