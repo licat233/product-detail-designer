@@ -148,7 +148,7 @@ Before planning the page, establish a compact internal identity record from the 
 Record:
 
 - `product_identity`: exact product name, model, variant, and any visually similar variants that must not be mixed.
-- `identity_anchor_assets`: filenames or asset IDs of the original, unedited product photographs that establish the real appearance.
+- `identity_anchor_assets`: filenames or asset IDs of original, unedited product photographs and, only when explicitly confirmed as current and exact, approved original CAD/product renders that establish the real appearance.
 - `supporting_visual_assets`: genuine close-ups, additional views, installation photos, and application photos that clarify particular features.
 - `identity_markers`: visible silhouette and proportions; component count and arrangement; distinctive geometry; ports, connectors, fasteners, markings, logos, and labels; color, finish, texture, and material appearance; included parts and assembly relationships.
 - `unknown_or_unseen`: sides, internal structures, hidden parts, colors, dimensions, or details that the supplied evidence does not establish.
@@ -162,11 +162,11 @@ Keep this record internal unless the user asks to see it. The goal is reliable e
 
 Keep these reference roles separate in every image-generation task:
 
-1. **Product identity anchors — original source assets.** Original product photos and genuine close-ups establish what the product actually looks like. Engineering drawings can establish documented geometry and relationships. Use the closest matching original view for the depiction being made.
+1. **Product identity anchors — original source assets.** Original product photos and genuine close-ups establish what the product actually looks like. A CAD/product render may serve as an anchor only when the user confirms it is current and exact. Engineering drawings can establish documented geometry and relationships. Use the closest matching original view for the depiction being made.
 2. **Page-continuity reference — previously accepted slice.** It establishes the scrolling page's background, scene, composition, lighting direction, perspective, and content handoff only. It is not a source of truth for product geometry, color, construction, markings, or component count.
 3. **Visual-style reference — explicitly designated design material.** It guides only the visual aspects the user asks it to guide; it does not override product identity.
 
-The original product identity anchors always take precedence over generated images and page-continuity references. Never promote an AI-generated slice, a Visual Master, a moodboard, or a prior AI rendering into an authoritative product reference. A Visual Master may guide page-level design, but any product depiction inside it remains illustrative unless it is the untouched original source photo.
+The original product identity anchors always take precedence over generated images and page-continuity references. Never promote an AI-generated slice, a Visual Master, a 1:3 continuity master, a moodboard, or a prior AI rendering into an authoritative product reference. A Visual Master may guide page-level design, but any product depiction inside it remains illustrative unless it is the untouched original source photo.
 
 For every slice that depicts the product, include the relevant original identity anchor(s) in that generation task whenever the tool supports multiple references. If the tool accepts only one image reference, prioritize the original product identity anchor; carry page continuity through the written handoff instead. **Product identity outranks page continuity.**
 
