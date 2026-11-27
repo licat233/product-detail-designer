@@ -18,6 +18,7 @@ A brand-neutral, chat-first skill for creating ecommerce product detail page ima
 5. **No setup burden.** Do not require local installation, Python, Node.js, packages, API keys, external services, scripts, HTML editors, or a separate rendering pipeline.
 6. **No unrequested intermediate deliverables.** Do not create standalone backgrounds, moodboards, contact sheets, wireframes, HTML reviews, visual-master images, or 1:3 canvases unless the user or their prompt explicitly asks for them.
 7. **Be honest about capability.** If native image generation is unavailable or fails, explain the limitation plainly. Never claim an image was generated when it was not.
+8. **Product appearance integrity is P0.** Original product photos are identity anchors; every product-bearing slice must be checked against them. Product identity outranks page continuity and visual polish.
 
 ## Operating modes
 
@@ -364,6 +365,7 @@ The internal Page Blueprint should contain only the information needed to produc
 - The single page-level H1 and the approved or planned copy.
 - A global visual specification: palette, typography direction, lighting, materials, image treatment, and visual hierarchy.
 - A slice map: each slice's purpose, content, relevant product assets, composition, text, top/bottom visual state, and intended handoff.
+- For each product-bearing slice: `product_depiction_mode`, `identity_anchor_assets`, `critical_identity_markers`, and relevant `forbidden_changes`.
 - The continuity strategy selected for each boundary, based on the tool's actual capabilities and the product scene.
 
 Do not force an eight-slice request into eight unrelated content modules. A content module may continue across file boundaries, and a slice may contain the end of one module and the beginning of another. Do not add filler to make every slice appear equally complete.
