@@ -19,7 +19,7 @@ Product Detail Designer 是一个面向整个电商行业的通用 AI Skill。�
 - **Chat-first：** 优先适配 ChatGPT 普通 Chat 会话等对话式 AI 环境。
 - **先确认制作需求：** 正式生成前确认输出语言、图片尺寸 / 比例、电商平台 / 展示位置和销售地区；缺失信息一次问完。
 - **零依赖：** 不要求安装 Python、Node.js、第三方包、脚本、API 或本地渲染环境。
-- **产品真实：** 优先保留真实产品的结构、颜色、材质、标识和关键部件。
+- **P0 产品外观完整性：** 原始产品照片是产品身份锚点；AI 优先设计产品周围的环境，而不是重绘产品。产品出现的每一屏都要对照原始素材验收；无法确认关键结构时，退回真实照片或可靠合成方案，不把漂移图当作真实产品。
 - **信息可信：** 不编造参数、认证、测试结果、销量、评价或其他商业声明。
 - **资料与设计分离：** PDF、宣传册和规格书默认只用于提取产品事实，不照搬或改编其页面 UI；最终详情页必须独立策划和设计。
 - **先设计整页，再切分图片：** 页面是设计单位，图片只是交付切片；不得逐张设计成独立海报或 PPT。
@@ -71,7 +71,7 @@ It is brand-neutral and category-neutral. It does not depend on a particular com
 - **Chat-first.** Prioritize ordinary ChatGPT conversations and other conversational AI environments.
 - **Confirm the production brief.** Before final generation, confirm output language, image dimensions/aspect ratio, ecommerce platform/placement, and sales region. Ask for all missing items together.
 - **No setup dependencies.** No Python, Node.js, packages, scripts, API keys, or local rendering pipeline are required.
-- **Protect product identity.** Preserve the real product's structure, color, material, branding, and distinctive components.
+- **P0 product appearance integrity.** Original product photos are the identity anchors; AI should design the environment around the product, not redraw the product. Verify every product-bearing slice against the original assets. If critical geometry cannot be confirmed, fall back to the real photo or a verified composite rather than presenting a drifted image as the real product.
 - **Keep claims accurate.** Never invent specifications, certifications, test results, sales figures, reviews, or commercial promises.
 - **Separate evidence from design.** Product PDFs, brochures, and specification sheets are factual sources by default, not visual templates. Final ecommerce pages must be independently conceived rather than adapted from the source document's page UI.
 - **Page first, slices second.** Design one complete vertical page before dividing it into image files; never design each image as a separate poster or slide.
