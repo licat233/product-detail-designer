@@ -30,7 +30,7 @@ https://raw.githubusercontent.com/licat233/product-detail-designer/feat/v1.0.6-p
 
 后续图片必须直接延续上一张的视觉和内容，不得重新开始一个完整版式。不要在每张图的顶部安排标题区，也不要在每张图的底部安排 Footer 区。拼接后必须像一张自然向下滚动的详情页，而不是多张 PPT。
 
-严格保护产品真实外观和资料准确性。不要编造参数或认证，不要安装依赖，不要编写代码，也不要制作未要求的独立背景、1:3 母版、HTML 预览或其他中间文件。生成后自行检查并修复产品、文字、参数和排版问题。
+**产品外观完整性是 P0 硬性门槛。** 先从原始实拍图建立产品身份锚点，记录型号、外轮廓、比例、组件数量与排列、接口、标识、颜色和材质，以及尚未被素材证明的细节。任何产品出现在某一屏时，都必须以对应的原始产品照片/真实特写作为身份参考；上一屏只负责页面连续性，不能代替原始产品照片，也不能成为产品结构的事实来源。默认直接使用真实产品照片；只有当前图像工具确实支持遮罩/图层合成并能保留原始产品像素时，才使用真实产品主体与 AI 场景合成。若工具只能根据参考图重新绘制，不得声称像素保留，也不得让 AI 擅自改变产品外观。不要生成素材未展示的角度、隐藏结构或细节。生成后逐屏将产品与原始身份锚点并排核对；型号、结构、组件数量、位置、比例、颜色、材质或标识出现关键偏差，或关键特征无法确认，均判定不合格。优先用原始照片替换错误主体；无法可靠修复时，退回真实照片方案或要求补充实拍素材，不能带着漂移继续生成后续页面。不要编造参数或认证，不要安装依赖，不要编写代码，也不要制作未要求的独立背景、1:3 母版、HTML 预览或其他中间文件。
 
 如果当前会话无法读取 Skill 或不具备实际图像生成能力，请明确告诉我，不要假装已经完成。
 
@@ -62,6 +62,6 @@ The complete page has **one primary title / H1 only**, placed in the first image
 
 Every later image must directly continue the previous image's visual and content flow. Do not reserve a title area at the top or a footer area at the bottom of every image. When stacked, the result must read like one naturally scrolling ecommerce page, not a collection of PowerPoint slides.
 
-Preserve the real product and keep all factual claims accurate. Do not invent specifications or certifications, install dependencies, write code, or create unrequested standalone backgrounds, 1:3 masters, HTML previews, or other intermediate assets. Inspect and repair product, copy, specification, and layout errors before delivery.
+**Product appearance integrity is a P0 hard gate.** Establish identity anchors from the original product photos before planning: model/variant, silhouette, proportions, component count and arrangement, ports, markings, color, material, and details not yet evidenced. Whenever a slice depicts the product, use the matching original product photo or genuine close-up as its identity reference. The previous slice is only a page-continuity reference; it cannot replace the original product photo or establish product geometry. Use the real product photo directly by default. Create a source-photo composite only when the available image tool truly supports masking/layers and can preserve the original product pixels. If the tool merely redraws from a reference image, do not call that pixel-preserving and do not let it freely change the product. Never invent an angle, hidden structure, or detail absent from the supplied evidence. Inspect every product-bearing slice side by side with the original identity anchors. A mismatch in model, structure, component count, placement, proportions, color, material, or markings—or any critical feature that cannot be verified—fails the image. Prefer replacing the inaccurate subject with the original photo; if reliable repair is unavailable, revert to the real-photo approach or request the missing source photo. Do not pass a failed depiction forward into later slices. Keep all factual claims accurate. Do not invent specifications or certifications, install dependencies, write code, or create unrequested standalone backgrounds, 1:3 masters, HTML previews, or other intermediate assets.
 
 If the Skill cannot be read or native image generation is unavailable, say so plainly. Never pretend the work is complete.
